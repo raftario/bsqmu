@@ -15,6 +15,6 @@ after_build:
   - rm release/*.cpp
 
 artifacts:
-  - path: Output\bsqmu-*.exe
-  - path: release
+  - path: release\bsqmu.exe
+  - path: release\LICENSE.txt
     type: zip
