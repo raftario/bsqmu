@@ -37,6 +37,13 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+    auto adbd = new QMessageBox(this);
+    adbd->setWindowTitle("adb");
+    adbd->setIcon(QMessageBox::Question);
+    adbd->setText("Please select the adb.exe file to use for the process.");
+    adbd->exec();
+    delete adbd;
+
     auto adbPathInput = new QFileDialog(this);
     adbPathInput->setNameFilter("adb Executable (adb.exe)");
     adbPathInput->setFileMode(QFileDialog::ExistingFile);
