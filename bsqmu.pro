@@ -37,6 +37,10 @@ FORMS += \
         agreementdialog.ui \
         mainwindow.ui
 
+RC_ICONS = icon.ico
+
+ICON = icon.icns
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
