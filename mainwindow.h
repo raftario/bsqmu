@@ -16,6 +16,12 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public slots:
+    void setSaveScores(int);
+    void setSaveSettings(int);
+    void setBackupApk(int);
+    void selectSongsFolder();
+
 private:
     Ui::MainWindow *ui;
     bool saveScores;

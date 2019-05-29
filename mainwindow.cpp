@@ -51,7 +51,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if (adbPathInput->selectedUrls().isEmpty()) {
         exit(EXIT_FAILURE);
     }
-    adbPath = adbPathInput->selectedUrls().first().toString().toStdString();
+    adbPath = adbPathInput->selectedUrls().first().path().toStdString();
     delete adbPathInput;
 #endif
 
@@ -61,9 +61,55 @@ MainWindow::MainWindow(QWidget *parent) :
     } else {
         delete ad;
     }
+
+    QObject::connect(ui->scoresCheckbox, SIGNAL(stateChanged(int)), this, SLOT(setSaveScores(int)));
+    QObject::connect(ui->settingsCheckbox, SIGNAL(stateChanged(int)), this, SLOT(setSaveSettings(int)));
+    QObject::connect(ui->backupCheckbox, SIGNAL(stateChanged(int)), this, SLOT(setBackupApk(int)));
+    QObject::connect(ui->browseButton, SIGNAL(released()), this, SLOT(selectSongsFolder()));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setSaveScores(int checkState) {
+    if (checkState == Qt::Unchecked) {
+        saveScores = false;
+    } else {
+        saveScores = true;
+    }
+}
+
+void MainWindow::setSaveSettings(int checkState) {
+    if (checkState == Qt::Unchecked) {
+        saveSettings = false;
+    } else {
+        saveSettings = true;
+    }
+}
+
+void MainWindow::setBackupApk(int checkState) {
+    if (checkState == Qt::Unchecked) {
+        backupApk = false;
+    } else {
+        backupApk = true;
+    }
+}
+
+void MainWindow::selectSongsFolder() {
+    auto sfpi = new QFileDialog(this);
+    sfpi->setOption(QFileDialog::ShowDirsOnly, true);
+    sfpi->setFileMode(QFileDialog::Directory);
+    sfpi->exec();
+    if (sfpi->selectedUrls().isEmpty()) {
+        songsfolderPath = "";
+        ui->patchButton->setEnabled(false);
+    } else {
+        songsfolderPath = sfpi->selectedUrls().first().path().toStdString();
+        ui->patchButton->setEnabled(true);
+    }
+    delete sfpi;
+
+    ui->songfolderPath->setText(QString::fromStdString(songsfolderPath));
 }
