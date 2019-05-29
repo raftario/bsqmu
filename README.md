@@ -2,6 +2,8 @@
 
 **THIS IS EXPERIMENTAL SOFTWARE. DO NOT ASK FOR SUPPORT. USE AT YOUR OWN RISK.**
 
+![AppVeyor](https://img.shields.io/appveyor/ci/raftario/bsqmu.svg?label=windows) ![Travis](https://img.shields.io/travis/com/raftario/bsqmu.svg?label=linux)
+
 * [Credits](#Credits)
 * [Dependencies](#Dependencies)
 * [Usage](#Usage)
