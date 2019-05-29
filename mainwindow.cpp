@@ -42,12 +42,12 @@ MainWindow::MainWindow(QWidget *parent) :
     adbPathInput->setNameFilter("adb Executable (adb.exe)");
     adbPathInput->setFileMode(QFileDialog::ExistingFile);
     adbPathInput->exec();
-    adbPath = adbPathInput->selectedUrls.first()->toString().toStdString();
+    adbPath = ((adbPathInput->selectedUrls).first()->toString()).toStdString();
     if (adbPath == "") {
         exit(EXIT_FAILURE);
     } else {
         delete adbPathInput;
-        cout << adbPath;
+        std::cout << adbPath;
     }
 #endif
 
