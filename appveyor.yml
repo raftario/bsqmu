@@ -6,12 +6,15 @@ install:
   - set QTDIR=C:\Qt\5.12.2\mingw73_32
   - set PATH=%QTDIR%\bin;C:\Qt\Tools\mingw530_32\bin;%PATH%
 build_script:
-  - dir /adh
+  - dir /adh /s
   - qmake bsqmu.pro
   - mingw32-make
 after_build:
   - windeployqt release/bsqmu.exe
-  - dir /adh
+  - rm release/*.o
+  - rm release/*.cpp
+  - dir /adh /s
 
 artifacts:
-  - path: release\bsqmu.exe
+  - path: release
+    type: zip
