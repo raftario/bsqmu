@@ -21,9 +21,9 @@ int Patcher::prepare() {
 
 int Patcher::pull(std::string apkPath, std::string adbPath) {
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
-    const std::string command = adbPath + " " + apkPath + " %USERPROFILE%\bsqmu\apk\old\";
+    const std::string command = adbPath + " pull " + apkPath + " %USERPROFILE%\bsqmu\apk\old\";
 #else
-    const std::string command = "adb " + apkPath + " ~/bsqmu/apk/old/";
+    const std::string command = "adb pull " + apkPath + " ~/bsqmu/apk/old/";
 #endif
     return std::system(command.c_str());
 }

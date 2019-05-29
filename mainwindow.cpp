@@ -125,6 +125,11 @@ void MainWindow::patch() {
     int exitCode = 0;
 
     exitCode += patcher.prepare();
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+    exitCode += patcher.pull("/data/app/com.beatgames.beatsaber-1/base.apk", adbPath);
+#else
+    exitCode += patcher.pull("/data/app/com.beatgames.beatsaber-1/base.apk", "");
+#endif
 
     auto ed = new QMessageBox(this);
     if (exitCode != 0) {
