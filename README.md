@@ -22,9 +22,9 @@ This program wouldn't exist without these people.
 
 This program requires you to have some other stuff already installed on your computer.
 
-* .NET Core (preinstalled on Windows)
-* adb
-* Java
+* [.NET Core](https://dotnet.microsoft.com/download/) (preinstalled on Windows)
+* [adb](https://www.xda-developers.com/install-adb-windows-macos-linux/)
+* [Java](https://www.java.com/)
 
 You must also enable Developer Mode on your Quest.
 
