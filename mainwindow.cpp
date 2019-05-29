@@ -1,7 +1,6 @@
 #include <cstdlib>
 #include <QMessageBox>
 #include <QFileDialog>
-#include <ostream>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "agreementdialog.h"
@@ -42,13 +41,11 @@ MainWindow::MainWindow(QWidget *parent) :
     adbPathInput->setNameFilter("adb Executable (adb.exe)");
     adbPathInput->setFileMode(QFileDialog::ExistingFile);
     adbPathInput->exec();
-    adbPath = ((adbPathInput->selectedUrls).first()->toString()).toStdString();
-    if (adbPath == "") {
+    if (adbPathInput->selectedUrls().isEmpty()) {
         exit(EXIT_FAILURE);
-    } else {
-        delete adbPathInput;
-        std::cout << adbPath;
     }
+    adbPath = adbPathInput->selectedUrls().first().toString().toStdString();
+    delete adbPathInput;
 #endif
 
     auto ad = new AgreementDialog(this);
