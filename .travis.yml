@@ -18,13 +18,13 @@ script:
   - # Generate AppImage
   - sudo apt-get -y install checkinstall
   - sudo checkinstall --pkgname=app --pkgversion="1" --pkgrelease="1" --backup=no --fstrans=no --default --deldoc
-  - mkdir -p appdir/usr/bin ; cd appdir
+  - mkdir -p bsqmu/usr/bin ; cd bsqmu
   - dpkg -x ../app_1-1_amd64.deb . ; find .
-  - mv ./usr/local/bin/* ./usr/bin/
+  - mv ./usr/local/bin/* ./usr/bin/ || true
   - cd ..
   - wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/6/linuxdeployqt-6-x86_64.AppImage"
   - chmod a+x linuxdeployqt*.AppImage
   - unset QTDIR; unset QT_PLUGIN_PATH ; unset LD_LIBRARY_PATH
-  - ./linuxdeployqt*.AppImage ./appdir/usr/bin/* -bundle-non-qt-libs
-  - ./linuxdeployqt*.AppImage ./appdir/usr/bin/* -appimage
+  - ./linuxdeployqt*.AppImage ./bsqmu/usr/opt/* -bundle-non-qt-libs
+  - ./linuxdeployqt*.AppImage ./bsqmu/usr/opt/* -appimage
   - curl --upload-file ./bsqmu*.AppImage https://transfer.sh/bsqmu-git.$(git rev-parse --short HEAD)-x86_64.AppImage
