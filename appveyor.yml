@@ -10,9 +10,6 @@ build_script:
   - mingw32-make
 after_build:
   - windeployqt release/bsqmu.exe
-  - cmd: cp LICENSE release/LICENSE.txt"
-  - rm release/*.o
-  - rm release/*.cpp
 
 artifacts:
   - path: release\bsqmu.exe
