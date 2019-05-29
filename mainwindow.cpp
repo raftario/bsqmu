@@ -56,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent) :
     if (adbPathInput->selectedUrls().isEmpty()) {
         exit(EXIT_FAILURE);
     }
-    adbPath = adbPathInput->selectedUrls().first().path().toStdString();
+    adbPath = adbPathInput->selectedUrls().first().path().toStdString().erase(0, 1);
     delete adbPathInput;
 #endif
 
