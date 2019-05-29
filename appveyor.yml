@@ -16,5 +16,3 @@ after_build:
 
 artifacts:
   - path: release\bsqmu.exe
-  - path: release\LICENSE.txt
-    type: zip
