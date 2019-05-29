@@ -13,7 +13,8 @@ install:
 
 
 script:
+  - ls -lAh
   - /opt/qt512/bin/qmake PREFIX=/usr
   - make
-  - dpkg -x ./app_1-1_amd64.deb . ; find .
-  - curl --upload-file ./opt/bsqmu/bin/bsqmu https://transfer.sh/bsqmu-git-$(git rev-parse --short HEAD)
+  - ls -lAh
+  - curl --upload-file ./bsqmu https://transfer.sh/bsqmu-$(git rev-parse --short HEAD)
