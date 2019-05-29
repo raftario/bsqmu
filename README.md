@@ -20,7 +20,7 @@ This program wouldn't exist without these people.
 
 This program requires you to have some other stuff already installed on your computer.
 
-* Mono (preinstalled on Windows)
+* .NET Core (preinstalled on Windows)
 * adb
 * Java
 

@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
     const int deps = std::system("where adb") + std::system("where java");
 #else
-    const int deps = std::system("which mono adb java");
+    const int deps = std::system("which dotnet adb java");
 #endif
     if (deps != 0) {
         QMessageBox dd;
