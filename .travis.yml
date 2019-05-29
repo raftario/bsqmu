@@ -8,7 +8,7 @@ before_install:
   - sudo apt-get update
 
 install:
-  - sudo apt-get install qt512base qt512xmlpattern libgl1-mesa-dev build-essentials
+  - sudo apt-get install qt512base qt512xmlpatterns libgl1-mesa-dev
   - source /opt/qt512/bin/qt512-env.sh
 
 
