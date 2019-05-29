@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>80</y>
+      <y>100</y>
       <width>561</width>
       <height>134</height>
      </rect>
@@ -115,19 +115,19 @@
      <rect>
       <x>40</x>
       <y>40</y>
-      <width>287</width>
-      <height>22</height>
+      <width>561</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Beat Saber Quest Modding Utility&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>230</y>
+      <y>250</y>
       <width>561</width>
       <height>128</height>
      </rect>
