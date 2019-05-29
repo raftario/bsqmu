@@ -26,11 +26,11 @@ This program requires you to have some other stuff already installed on your com
 * [adb](https://www.xda-developers.com/install-adb-windows-macos-linux/)
 * [Java](https://www.java.com/)
 
-You must also enable Developer Mode on your Quest.
+You must also [enable Developer Mode](https://developer.oculus.com/documentation/quest/latest/concepts/mobile-device-setup-quest/) on your Quest.
 
 ## Usage
 
-You will have to start the program from a CLI to preserve your PATH if you are not using Windows. Once it's started, just choose your options and patch.
+If you're on Windows, just double click `bsqmu.exe` to start it. If you're on UNIX, you will have to start the program from a CLI to preserve your PATH. Once it's started, just choose your options and patch.
 
 ## License
 
