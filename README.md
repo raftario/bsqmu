@@ -28,7 +28,7 @@ You must also enable Developer Mode on your Quest.
 
 ## Usage
 
-You will have to start the program from a CLI to preserve your PATH. Once it's done, just choose your options and patch.
+You will have to start the program from a CLI to preserve your PATH if you are not using Windows. Once it's started, just choose your options and patch.
 
 ## License
 

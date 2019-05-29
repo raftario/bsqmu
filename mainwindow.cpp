@@ -29,7 +29,11 @@ MainWindow::MainWindow(QWidget *parent) :
         auto dd = new QMessageBox(this);
         dd->setWindowTitle("Missing Dependencies");
         dd->setIcon(QMessageBox::Critical);
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+        dd->setText("It appears you are missing required dependencies. Make sure they are installed.");
+#else
         dd->setText("It appears you are missing required dependencies. Make sure they are installed and that you launched the program from a CLI with a correct PATH.");
+#endif
         dd->exec();
         exit(EXIT_FAILURE);
     } else {
