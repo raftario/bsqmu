@@ -4,6 +4,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "agreementdialog.h"
+#include "patcher.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -70,6 +71,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->settingsCheckbox, SIGNAL(stateChanged(int)), this, SLOT(setSaveSettings(int)));
     QObject::connect(ui->backupCheckbox, SIGNAL(stateChanged(int)), this, SLOT(setBackupApk(int)));
     QObject::connect(ui->browseButton, SIGNAL(released()), this, SLOT(selectSongsFolder()));
+    QObject::connect(ui->patchButton, SIGNAL(released()), this, SLOT(patch()));
 }
 
 MainWindow::~MainWindow()
@@ -116,4 +118,25 @@ void MainWindow::selectSongsFolder() {
     delete sfpi;
 
     ui->songfolderPath->setText(QString::fromStdString(songsfolderPath));
+}
+
+void MainWindow::patch() {
+    Patcher patcher;
+    int exitCode = 0;
+
+    exitCode += patcher.prepare();
+
+    auto ed = new QMessageBox(this);
+    if (exitCode != 0) {
+        ed->setWindowTitle("Patch Failed");
+        ed->setIcon(QMessageBox::Critical);
+        ed->setText("An error occurred while trying to patch the game.");
+        ed->exec();
+    } else {
+        ed->setWindowTitle("Patch Successful");
+        ed->setIcon(QMessageBox::Information);
+        ed->setText("Successfully patched the game.");
+        ed->exec();
+    }
+    delete ed;
 }

@@ -21,6 +21,7 @@ public slots:
     void setSaveSettings(int);
     void setBackupApk(int);
     void selectSongsFolder();
+    void patch();
 
 private:
     Ui::MainWindow *ui;

@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         agreementdialog.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        patcher.cpp
 
 HEADERS += \
         agreementdialog.h \
-        mainwindow.h
+        mainwindow.h \
+        patcher.h
 
 FORMS += \
         agreementdialog.ui \
