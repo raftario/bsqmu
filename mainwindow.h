@@ -22,6 +22,9 @@ private:
     bool saveSettings;
     bool backupApk;
     std::string songsfolderPath;
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
+    std::string adbPath;
+#endif
 };
 
 #endif // MAINWINDOW_H
