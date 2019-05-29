@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <string>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +18,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    bool saveScores;
+    bool saveSettings;
+    bool backupApk;
+    std::string songsfolderPath;
 };
 
 #endif // MAINWINDOW_H
