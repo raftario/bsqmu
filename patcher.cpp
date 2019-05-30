@@ -30,7 +30,7 @@ int Patcher::pull(std::string apkPath, std::string adbPath, bool backup) {
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__)
     std::string command = adbPath + " pull " + apkPath + " %USERPROFILE%\\bsqmu\\apk\\";
     if (backup) {
-        command += " && mkdir %USERPROFILE%\\bsqmu\\backup\\ " + ts + "\\apk\\ && cp /y %USERPROFILE%\\bsqmu\\apk\\base.apk %USERPROFILE%\\bsqmu\\backup\\ " + ts + "\\apk\\base.apk"
+        command += " && mkdir %USERPROFILE%\\bsqmu\\backup\\ " + ts + "\\apk\\ && cp /y %USERPROFILE%\\bsqmu\\apk\\base.apk %USERPROFILE%\\bsqmu\\backup\\ " + ts + "\\apk\\base.apk";
     }
 #else
     std::string command = "adb pull " + apkPath + " ~/bsqmu/apk/";
